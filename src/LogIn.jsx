@@ -7,15 +7,43 @@ export default function LogIn() {
 
     function handleSubmit(e) {
         e.preventDefault();
-        console.log(email);
-        console.log(password)
+
+
+        const resultData = JSON.parse(localStorage.getItem("userData"))
+        if (!resultData) {
+            alert("No account found. Please sign up first.");
+            return;
+        }
+
+        if (resultData.email === email && resultData.password === password) {
+            alert("login successfully");
+        }
+        else if (resultData.email != email && resultData.password != password) {
+            alert("Invalid E-mail and Passowrd");
+        }
+        else if (resultData.email != email) {
+            alert("Invalid email")
+        }
+        else if (resultData.password != password) {
+            alert("Invalid password")
+        }
+
+
+    }
+    function handleLogout() {
+        if (!localStorage) {
+            alert("login first")
+            return;
+        }
+        localStorage.removeItem("userData");
+        alert("Logged out successfully")
     }
 
     return (
         <>
             <Nav />
             <div className="formStyle">
-                <h2>Login</h2>
+                <h1>Login</h1>
                 <form onSubmit={handleSubmit}>
                     <input onChange={e => setEmail(e.target.value)}
                         type="email"
@@ -29,8 +57,11 @@ export default function LogIn() {
                         value={password}
                     />
                     <br />
-                    <button>Submit</button>
+                    <button>Log in</button>
+                    <button onClick={handleLogout}>Log out</button>
+
                 </form>
+
 
             </div>
         </>

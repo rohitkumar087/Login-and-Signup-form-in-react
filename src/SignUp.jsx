@@ -9,13 +9,18 @@ export default function SignUp() {
 
      function handleSubmit(e) {
         e.preventDefault();
-        console.log(name);
-        console.log(email)
-        console.log(phone)
-        console.log(password)
+        const result = {
+            name, email,phone,password
+        }
 
-        email = ''
+        localStorage.setItem('userData',JSON.stringify(result))
+
+        setName('')
+        setEmail('')
+        setPhone('')
+        setPassword('')
     }
+
     return (
         <>
         <Nav/>
@@ -54,9 +59,10 @@ export default function SignUp() {
                     />
                     <br />
 
-                    <button type='submit' className='button'>Submit</button>
+                    <button>Sign up</button>
                 </form>
             </div>
+            <p>I you have </p>
         </>
     )
 }
