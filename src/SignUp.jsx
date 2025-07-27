@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Nav from "./Nav";
 import { useState } from "react";
 
@@ -62,7 +63,7 @@ export default function SignUp() {
                     <button>Sign up</button>
                 </form>
             </div>
-            <p>I you have </p>
+            <h4>If you already have an account ? <Link to='/login'>Log in</Link></h4>
         </>
     )
 }
