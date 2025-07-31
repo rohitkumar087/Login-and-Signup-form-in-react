@@ -53,7 +53,7 @@ export default function SignUp() {
                         value={name}
                         onChange={e => setName(e.target.value)}
                     />
-                {error.name && <p style={{color:"white",textAlign:"left"}}>{error.name}</p>}
+                    {error.name && <p style={{color:"white",textAlign:"left"}}>{error.name}</p>}
                     </div>
                     <br />
                    <div>
@@ -63,7 +63,7 @@ export default function SignUp() {
                         value={email}
                         onChange={e => setEmail(e.target.value)}
                     />
-                                    {error.email && <p style={{color:"white",textAlign:"left"}}>{error.email}</p>}
+                    {error.email && <p style={{color:"white",textAlign:"left"}}>{error.email}</p>}
 
                    </div>
                     <br />
@@ -75,7 +75,7 @@ export default function SignUp() {
                         value={phone}
                         onChange={e => setPhone(e.target.value)}
                     />
-                                    {error.phone && <p style={{color:"white",textAlign:"left"}}>{error.phone}</p>}
+                    {error.phone && <p style={{color:"white",textAlign:"left"}}>{error.phone}</p>}
 
                    </div>
                     <br />
@@ -87,7 +87,7 @@ export default function SignUp() {
                         value={password}
                         onChange={e => setPassword(e.target.value)}
                     />
-                                    {error.password && <p style={{color:"white",textAlign:"left"}}>{error.password}</p>}
+                    {error.password && <p style={{color:"white",textAlign:"left"}}>{error.password}</p>}
 
                    </div>
                     <br />
@@ -99,3 +99,5 @@ export default function SignUp() {
         </>
     )
 }
+
+ 
