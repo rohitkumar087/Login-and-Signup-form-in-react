@@ -17,6 +17,8 @@ export default function LogIn() {
 
         if (resultData.email === email && resultData.password === password) {
             alert("login successfully");
+            setEmail("")
+            setPassword("")
         }
         else if (resultData.email != email && resultData.password != password) {
             alert("Invalid E-mail and Passowrd");
@@ -64,6 +66,8 @@ export default function LogIn() {
 
 
             </div>
+            <h4>If you don't have any accout so - <a href="/signup">Sign up</a></h4> 
+
         </>
     )
 }

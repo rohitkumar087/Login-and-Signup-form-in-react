@@ -16,6 +16,9 @@ export default function SignUp() {
         //     setError("Please fill all the fields");
         //     return;
         // }
+        if(name && email && phone && password){
+            alert("Sign up successful now you can login")
+        }
         const allError ={}
         if(!name) allError.name = 'Name is required'
         if(!email) allError.email = 'Email is required'
