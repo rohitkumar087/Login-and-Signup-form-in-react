@@ -8,6 +8,7 @@ export default function Nav(){
             <Link to='/' style={{color:"white"}}>Home</Link>
             <Link to='/login' style={{color:"white"}}>Log in</Link>
             <Link to='/signup' style={{color:"white"}}>Sign up</Link>
+            <Link to='/fetch' style={{color:"white"}}>Fetch</Link>
         </div>
      </>
     )

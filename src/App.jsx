@@ -7,6 +7,7 @@ import Nav from './Nav'
 import SignUp from './SignUp'
 import LogIn from './LogIn'
 import Home from './Home'
+import Fetch from './Fetch'
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
                               <Route path='/' element={<Home />}></Route>
                               <Route path='/signup' element={<SignUp />}></Route>
                               <Route path='/login' element={<LogIn />}></Route>
+                              <Route path='/fetch' element={<Fetch/>}></Route>
                         </Routes>
                   </BrowserRouter>
             </>
