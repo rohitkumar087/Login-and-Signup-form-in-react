@@ -7,7 +7,9 @@ import Nav from './Nav'
 import SignUp from './SignUp'
 import LogIn from './LogIn'
 import Home from './Home'
+import Fetch1 from './Fetch1'
 import Fetch from './Fetch'
+import { Axios } from 'axios'
 
 
 function App() {
@@ -19,7 +21,8 @@ function App() {
                               <Route path='/' element={<Home />}></Route>
                               <Route path='/signup' element={<SignUp />}></Route>
                               <Route path='/login' element={<LogIn />}></Route>
-                              <Route path='/fetch' element={<Fetch/>}></Route>
+                              <Route path='/fetch' element={<Fetch1/>}></Route>
+                              <Route path='/axios' element={<Fetch/>}></Route>
                         </Routes>
                   </BrowserRouter>
             </>

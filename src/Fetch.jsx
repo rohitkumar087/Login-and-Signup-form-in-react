@@ -1,33 +1,37 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
-import Nav from "./Nav";
+import { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
+import Nav from "./Nav"
 
 export default function Fetch(){
-    const [data,setData]=useState('')
-    const [toggle,setToggle] =useState(true)
+    const [data,setData] = useState("")
+    const [toggle,setToggle] = useState(true)
 
-
-    const fetchData = async() => {
-        const result =   await axios.get('https://fakestoreapi.com/products') 
-        console.log(result)   
-        setData(result.data)
+    const navigate = useNavigate()
+const fetchData = () =>{
+    fetch('https://fakestoreapi.com/products')
+    .then(res => res.json())
+    .then(result => setData(result))
+    console.log(data)
+}
+const fetchToggle = () =>{
+    setToggle(!toggle)
+    if(toggle){
+        navigate('/')
     }
-
-    const fetchToggle = async() =>{
-        setToggle(!toggle)
-        console.log(toggle)
+    else{
+        navigate('/fetch')
     }
+}
 
-    useEffect(()=>{
-        fetchData();
-    },[toggle]);
+useEffect(()=>{
+    fetchData()
+},[toggle])
 
     return(
         <>
         <Nav/>
-        <h1>Fetch</h1>
+        <h1>Fetch data</h1>
         <button onClick={fetchToggle}>Change</button>
-        {data && data.map((item) => <p key={item.id}>{item.title}</p>)}
         </>
     )
 }
