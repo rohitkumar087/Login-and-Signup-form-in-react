@@ -1,34 +1,33 @@
-import axios from "axios"
-import { useEffect, useState } from "react"
-import Nav from "./Nav"
-import { data } from "react-router-dom"
+import { useEffect, useState } from "react";
+import axios from "axios";
+import Nav from "./Nav";
 
 export default function Fetch(){
+    const [data,setData]=useState('')
+    const [toggle,setToggle] =useState(true)
 
-const [data,setData]=useState('')
-const [toggle,setToggle]=useState(true)
 
-const fetchData = async() =>{
-const result = await axios.get('https://fakestoreapi.com/products')
-console.log(result.data)
-setData(result.data)
-}
+    const fetchData = async() => {
+        const result =   await axios.get('https://fakestoreapi.com/products') 
+        console.log(result)   
+        setData(result.data)
+    }
 
-const fetchToggle = async() => {
-    setToggle(toggle)
-}
+    const fetchToggle = async() =>{
+        setToggle(!toggle)
+        console.log(toggle)
+    }
 
-useEffect(()=>{
-    fetchData()
-},[toggle])
-
-console.log(toggle)
+    useEffect(()=>{
+        fetchData();
+    },[toggle]);
 
     return(
         <>
         <Nav/>
-        <button onClick={fetchToggle}>Change</button>
         <h1>Fetch</h1>
+        <button onClick={fetchToggle}>Change</button>
+        {data && data.map((item) => <p key={item.id}>{item.title}</p>)}
         </>
     )
 }
