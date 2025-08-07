@@ -20,13 +20,13 @@ export default function Fetch1(){
 
     useEffect(()=>{
         fetchData();
-    },[toggle]);
+    },[]);
 
     return(
         <>
         <Nav/>
         <h1>Access data through axios</h1>
-        <button onClick={fetchToggle}>Change</button>
+        {/* <button onClick={fetchToggle}>Change</button> */}
         {data && data.map((item) => <p key={item.id}>{item.title}</p>)}
         </>
     )

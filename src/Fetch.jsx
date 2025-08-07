@@ -6,6 +6,9 @@ export default function Fetch() {
     const [data, setData] = useState([])
     const [toggle, setToggle] = useState(true)
     const [loading, setLoading] = useState(true)
+    const [search, setSearch] = useState('')
+    const [sort, setsort] = useState('')
+
 
     const navigate = useNavigate()
     const fetchData = () => {
