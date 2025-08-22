@@ -23,7 +23,6 @@ export default function Fetch1(){
         &&
         (category === '' || item.category === category)
     )
-
      .sort((a,b) =>{
             if(sort === 'asc'){
                 return a.price-b.price
@@ -95,6 +94,7 @@ export default function Fetch1(){
                             <h3>{item.title}</h3>
                             <p>{item.category}</p>
                             <p><strong>Price:</strong> ${item.price}</p>
+                            <button>View Details</button>
                         </div>
                     ))}
                 </div>
